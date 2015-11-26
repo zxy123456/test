@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.csai.POJO.Speciality" table="Speciality"  schema="dbo">
+    <id name="specialityId" type="integer" column="SpecialityId">
+    	<generator class="identity"/>
+    </id>	
+    <property name="specialityName" type="text" column="SpecialityName"/>
+    <list name="studentList" inverse="true" cascade="all">
+    	<key column="SpecialityId"/>
+    	<index column="StudentId"/>
+    	<one-to-many class="com.csai.POJO.Student"/>
+    </list>
+</class>
+</hibernate-mapping>

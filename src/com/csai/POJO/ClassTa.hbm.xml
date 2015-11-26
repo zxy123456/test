@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.csai.POJO.ClassTa" table="ClassTa"  schema="dbo">
+    <id name="classId" type="integer" column="ClassId">
+    	<generator class="identity"/>
+    </id>	
+    <property name="className" type="text" column="ClassName"/>
+    <list name="studentList" inverse="false" cascade="all" table="Student">
+    	<key column="ClassId"/>
+    	<index column="StudentId"/>
+    	<one-to-many class="com.csai.POJO.Student"/>
+    </list>
+</class>
+</hibernate-mapping>

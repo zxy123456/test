@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!--会话工厂配置-->
+	<session-factory>
+		<!--数据库方言-->
+		<property name="dialect">
+			org.hibernate.dialect.SQLServerDialect
+		</property>
+		<!--数据库登录用户名-->
+		<property name="connection.username">sa</property>
+		<!--数据库用户登录密码-->
+		<property name="connection.password">123</property> 
+		<!--数据库连接字符串-->
+		<property name="connection.url">
+			jdbc:sqlserver://localhost:1433;DatabaseName=RegisterSystem
+		</property>
+		<!--是否显示SQL语句-->
+		<property name="show_sql">true</property>
+		<!--POJO对象对应的映射文件-->
+		<mapping resource="com/csai/POJO/AdminUser.hbm.xml" />
+		<mapping resource="com/csai/POJO/Student.hbm.xml" />
+		<mapping resource="com/csai/POJO/Bedchamber.hbm.xml" />
+		<mapping resource="com/csai/POJO/ClassTa.hbm.xml" />
+		<mapping resource="com/csai/POJO/Speciality.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
