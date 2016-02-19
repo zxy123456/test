@@ -45,6 +45,6 @@
         <!-- ==== 宿舍分配管理模块 ==== -->
         <action name="Bed" class="bed">
             <result>/bed/bedchamber.jsp</result>
-        </action>
+        </action>cccccccccccccccc
     </package>
 </struts>aaaaaaaa
